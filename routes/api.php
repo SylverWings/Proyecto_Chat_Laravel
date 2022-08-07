@@ -59,7 +59,7 @@ Route::group(
 Route::group(
     ['middleware'=> 'jwt.auth'],
     function(){
-        Route::post('/joinChannel', [ChannelUserController::class, 'joinChannel']);
+        Route::post('/joinChannel/{id}', [ChannelUserController::class, 'joinChannel']);
         Route::delete('/leaveChannel/{id}',[ChannelUserController::class, 'leaveChannel']);
     }
 );
@@ -68,9 +68,9 @@ Route::group(
 Route::group(
     ['middleware'=> 'jwt.auth'],
     function(){
-        Route::post('/Message', [MessageController::class, 'sendMessage']);
-        Route::get('/message/{id}', [MessageController::class, 'getAllMessagesInChannelById']);
+        Route::post('/message', [MessageController::class, 'sendMessage']);
+        Route::get('/message/{id}', [MessageController::class, 'getMessagesInChannelById']);
         Route::put('/message/{id}', [MessageController::class, 'updateMessage']);
-        Route::delete('/deleteMessage/{id}',[MessageController::class, 'deleteMessage']);
+        Route::delete('/message/{id}',[MessageController::class, 'deleteMessage']);
     }
 );
