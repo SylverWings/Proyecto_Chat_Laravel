@@ -24,13 +24,13 @@ class ChannelSeeder extends Seeder
                 'game_id' => 1,
             ],[
                 'name' => 'Monados',
-                'game_id' => 2,
+                'game_id' => 11,
             ],[
                 'name' => 'Rathalos',
-                'game_id' => 3,
+                'game_id' => 12,
             ],[
                 'name' => 'Glavenus',
-                'game_id' => 3,
+                'game_id' => 12,
             ]
         ]);
     }
