@@ -20,7 +20,7 @@ class ChannelUserSeeder extends Seeder
                 'user_id' => 1,
                 'party_id' => 1
             ],[
-                'user_id' => 2,
+                'user_id' => 11,
                 'party_id' => 1
             ]
         ]);

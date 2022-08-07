@@ -23,7 +23,7 @@ class MessageSeeder extends Seeder
                 'date' => '2022-08-01'
             ],[
                 'message' => 'Pfff... el Hyliano de calle',
-                'user_id' => 2,
+                'user_id' => 11,
                 'channel_id' => 1,
                 'date' => '2022-08-01'
             ],[
