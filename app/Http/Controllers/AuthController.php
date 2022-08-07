@@ -74,7 +74,7 @@ class AuthController extends Controller
         );
     }
 
-    public function me()
+    public function profile()
     {
         return response()->json(
             [
