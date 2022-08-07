@@ -1,64 +1,160 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Base de datos Chat 
+---
+Para este proyecto se nos pidió que crearamos una DataBase(con una gestion de datos basado en Laravel) para un chat como si fuera "Discord".
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
+## Trabajo Realizado 🔧
+---
 
-## About Laravel
+Lo primero que hice fue pensar el diagrama de la base de datos. Y una vez tuve claro la estructura de la base de datos, procedí a la creacion de los modelos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+_Foto de Ejemplo_
+<img class="foto" src="./img/Chat DDBB.jpg" alt="diagrama">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Lo siguiente fue hacer los seeders de las diferentes tablas. A continuacion, hice las diferentes rutas de los controladores. Una vez tuve hecha las rutas, fui a por los controladores. Definí el CRUD de todas las tablas que lo necesitacen.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Una vez acabamos todo el trabajo, repasamos que los controladores y las rutas esten bien. A continuacion, deployamos en Heroku la base de datos
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Deploy en Heroku 
+---
 
-## Laravel Sponsors
+[Link del proyecto en heroku](https://sylverwing-chat-app.herokuapp.com/api) 🌎
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Instrucciones y endpoints
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Abrir el link de heroku para arrancar automáticamente el servidor. 
 
-## Code of Conduct
+- Pasamos a postman donde copiaremos también el mismo link para empezar a lanzar peticiones.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Endpoints
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+<h4>Usuarios</h4>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* "/api/register" para registrarnos como usurarios.
+
+<br>
+
+* "/api/login" para loggearnos como usuarios
+
+<br>
+
+* "/api/profile" con este Endpoint veríamos nuestra informacion de usuario
+
+<br>
+
+* "/api/profile/update/:id" para buscar y actualizar tu perfil por su id
+
+<br>
+
+* "/api/logout" para cerrar sesion
+
+<br>
+
+---
+
+<h4>Channels</h4>
+
+---
+
+
+* GET "/api/channel" para buscar todos los canales
+
+<br>
+
+* GET "/api/channel/:id" para buscar un canal a través de su id.
+
+<br>
+
+* POST "/api/channel" para crear un canal
+
+<br>
+
+* PUT "/api/channel/:id" para buscar y modificar un canal por su id
+
+<br>
+
+* DELETE "/api/channel/:id" para buscar y borrar un canal por su id
+
+<br>
+
+---
+
+<h4>Games</h4>
+
+---
+
+
+* POST "/api/games" para crear una tematica de un juego
+
+<br>
+
+* GET "/api/games/:id" para buscar un juego a través de su id.
+
+<br>
+
+* GET "/api/games" para buscar todos los juegos
+
+<br>
+
+* PUT "/api/games/:id" para buscar y modificar un juego por su id
+
+<br>
+
+* DELETE "/api/games/:id" para buscar y borrar un juego por su id
+
+<br>
+
+---
+
+<h4>Messages</h4>
+
+---
+
+* POST "/api/message" para crear enviar un mensaje
+
+<br>
+
+* GET "/api/message/:id" para buscar un mensaje a través de su id.
+
+<br>
+
+* PUT "/api/message/:id" para buscar y modificar un mensaje por su id
+
+<br>
+
+* DELETE "/api/message/:id" para buscar y borrar un mensaje por su id
+
+<br>
+
+
+---
+
+<h4>Herramientas 🛠️</h4>
+
+---
+
+- PHP
+
+- Laravel
+
+- Heroku
+
+---
+
+<h4>Diseño y Producido ✒️</h4>
+
+---
+
+Lionel M. Garcia Bustos
