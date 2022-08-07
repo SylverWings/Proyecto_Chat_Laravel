@@ -50,6 +50,7 @@ class AuthController extends Controller
         }
     }
 
+
     public function login(Request $request)
     {
         $input = $request->only('email', 'password');
@@ -74,6 +75,7 @@ class AuthController extends Controller
         );
     }
 
+
     public function profile()
     {
         return response()->json(
@@ -84,6 +86,7 @@ class AuthController extends Controller
             200
         );
     }
+    
 
     public function logout(Request $request)
     {
