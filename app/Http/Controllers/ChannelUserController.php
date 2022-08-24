@@ -8,22 +8,20 @@ use Illuminate\Support\Facades\Log;
 
 class ChannelUserController extends Controller
 {
-    const CHANNEL = 1;
-
-    public function joinChannel($id)
+    
+    public function joinChannel($channel_id)
     {
-
         try {
             Log::info('User join to channel');
 
-            $user = User::query()->find($id);
-            $user->channel()->attach(self::CHANNEL);
+            $userId = auth()->user()->id;
+            $userId->channel()->attach($channel_id);
 
             return response()->json(
                 [
                     'success' => true,
                     'message' => 'User join to channel',
-                    'data' => $user
+                    'data' => $userId
                 ],
                 200
             );
@@ -33,7 +31,7 @@ class ChannelUserController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Unable to Add user to channel',
-                'data' => $user
+                'data' => $userId
                 ],
                 500
             );
@@ -41,18 +39,18 @@ class ChannelUserController extends Controller
     }
 
 
-    public function leaveChannel($id)
+    public function leaveChannel($channel_id)
     {
         try {
             Log::info('User leave channel');
 
-            $user = User::query()->find($id);
-            $user->channel()->detach(self::CHANNEL);
+            $userId = auth()->user()->id;
+            $userId->channel()->detach($channel_id);
 
             return response()->json([
                 'success' => true,
                 'message' => 'User leave channel',
-                'data' => $user
+                'data' => $userId
                 ],
                 200
             );
@@ -61,7 +59,7 @@ class ChannelUserController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Unable to Remove user from channel',
-                'data' => $user
+                'data' => $userId
                 ],
                 500
             );
