@@ -134,6 +134,7 @@ class ChannelController extends Controller
         try {
 
             Log::info('Updating channel with id: '.$id);
+            
             $userId = auth()->user()->id;
             $channel = Channel::where('user_id','=',$userId)->find($id);
 
