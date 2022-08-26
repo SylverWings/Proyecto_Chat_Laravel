@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('message');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('channel_id');
-            $table->date('date');
+            $table->unsignedBigInteger('channel_id');            
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
