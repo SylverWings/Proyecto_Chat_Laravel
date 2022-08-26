@@ -47,7 +47,7 @@ class ChannelUserController extends Controller
 
             $userId = auth()->user()->id;
             $user = User::find($userId);
-            $user->channel()->detach($channel_id);
+            $user->channels()->detach($channel_id);
 
             return response()->json([
                 'success' => true,
