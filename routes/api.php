@@ -72,7 +72,7 @@ Route::group(
 Route::group(
     ['middleware'=> 'jwt.auth'],
     function(){
-        Route::post('/message', [MessageController::class, 'sendMessage']);
+        Route::post('/message/{id}', [MessageController::class, 'sendMessage']);
         Route::get('/message/{id}', [MessageController::class, 'getMessagesInChannelById']);
         Route::put('/message/{id}', [MessageController::class, 'updateMessage']);
         Route::delete('/message/{id}',[MessageController::class, 'deleteMessage']);
