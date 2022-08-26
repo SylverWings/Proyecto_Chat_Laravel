@@ -55,7 +55,7 @@ Route::group(
         Route::get('/channel', [ChannelController::class, 'getAllChannels']);
         Route::get('/channel/{id}', [ChannelController::class, 'getChannelById']);
         Route::put('/channel/{id}', [ChannelController::class, 'updateChannel']);
-        Route::delete('/channel/{id}',[ChannelController::class, 'deleteChannelById']);
+        Route::delete('/channel/{id}',[ChannelController::class, 'deleteChannel']);
     }
 );
 
