@@ -14,9 +14,10 @@ class MessageController extends Controller
         try {
             Log::info('Creating Message');
 
-            $message = $request->input('message');            
             $userId = auth()->user()->id;
-            $channel = $id;
+            $message = $request->input('message');            
+            $channel = Channel::find($id);
+            $channel->messages()->attach($message);
 
             $newMessage = new Message();
             $newMessage->message = $message;
