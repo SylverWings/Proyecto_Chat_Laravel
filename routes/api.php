@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChannelController;
+use App\Http\Controllers\ChannelUserController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,7 +51,7 @@ Route::group(
 Route::group(
     ['middleware'=> 'jwt.auth'],
     function(){
-        Route::post('/channel', [ChannelController::class, 'createChannel']);
+        Route::post('/channel/{id}', [ChannelController::class, 'createChannel']);
         Route::get('/channel', [ChannelController::class, 'getAllChannels']);
         Route::get('/channel/{id}', [ChannelController::class, 'getChannelById']);
         Route::put('/channel/{id}', [ChannelController::class, 'updateChannelById']);

@@ -15,7 +15,8 @@ class ChannelUserController extends Controller
             Log::info('User join to channel');
 
             $userId = auth()->user()->id;
-            $userId->channel()->attach($channel_id);
+            $user = User::find($userId);
+            $user->channels()->attach($channel_id);
 
             return response()->json(
                 [
@@ -45,7 +46,8 @@ class ChannelUserController extends Controller
             Log::info('User leave channel');
 
             $userId = auth()->user()->id;
-            $userId->channel()->detach($channel_id);
+            $user = User::find($userId);
+            $user->channel()->detach($channel_id);
 
             return response()->json([
                 'success' => true,

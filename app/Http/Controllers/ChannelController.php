@@ -8,24 +8,24 @@ use Illuminate\Support\Facades\Log;
 
 class ChannelController extends Controller
 {
-    public function createChannel ($id,Request $request)
+    public function createChannel (Request $request, $id)
     {
         try {
             Log::info('Creating Channel');
 
-            $name = $request->input('name');
+            $name = $request->input('name');            
             $userId = auth()->user()->id;
             $game = $id;
 
-            if(!$name|| $name = ""){
-                return response()->json(
-                    [
-                        "success"=> false,
-                        "message"=> 'Missing Channel Name' 
-                    ],
-                    400
-                );
-            }
+            // if(!$name|| $name == ""){
+            //     return response()->json(
+            //         [
+            //             "success"=> false,
+            //             "message"=> 'Missing Channel Name' 
+            //         ],
+            //         400
+            //     );
+            // }
 
             $newChannel = new Channel();
             $newChannel->name = $name;
