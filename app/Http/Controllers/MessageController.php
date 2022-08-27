@@ -51,10 +51,19 @@ class MessageController extends Controller
         try {
             Log::info('Getting message id: '.$id);
 
-            $channel_id = $id;
-            $messages = Message::find($channel_id)->message;            
+            $messages = Channel::find($id)->message;            
             $sorted = $messages->sortByDesc('created_at');
             $sorted->values()->all();
+
+            if(!$messages){
+                return response()->json(
+                    [
+                        'success' => false,
+                        'message' => 'Message not found'
+                    ],
+                    404
+                );
+            }
 
             return response()->json(
                 [
