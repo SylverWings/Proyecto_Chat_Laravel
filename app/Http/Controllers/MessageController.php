@@ -80,7 +80,6 @@ class MessageController extends Controller
                 [
                     "success"=> false,
                     "message"=> 'Error getting Message',
-                    "error"=> $exception
                 ],
                 500
             );
