@@ -51,6 +51,7 @@ class MessageController extends Controller
         try {
             Log::info('Getting message id: '.$id);
 
+            $userId = auth()->user()->id;
             $messages = Message::where('channel_id', '=', $id)->find('message');            
             $sorted = $messages->sortByDesc('created_at');
             $sorted->values()->all();
