@@ -55,16 +55,6 @@ class MessageController extends Controller
             $sorted = $messages->sortByDesc('created_at');
             $sorted->values()->all();
 
-            if(!$messages){
-                return response()->json(
-                    [
-                        'success' => false,
-                        'message' => 'Message not found'
-                    ],
-                    404
-                );
-            }
-
             return response()->json(
                 [
                     "success"=> true,
