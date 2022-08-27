@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "f484e0af-9e59-4de2-97f8-59cee08b5244",
+		"name": "Chat Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21292914"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pablo\",\r\n    \"surname\": \"Rueda\",\r\n    \"nickname\": \"Dablo\",\r\n    \"email\": \"pablorueda@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/register",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pablorueda@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/login",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDY4NzAsImV4cCI6MTY2MTUxMDQ3MCwibmJmIjoxNjYxNTA2ODcwLCJqdGkiOiJzQ1lZMXpkYVdodzhkTWFJIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GmLN3_PZ34JU2WtPRs0rBV0TJxDdIeAbYNhpJb89hxo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/profile",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDY4NzAsImV4cCI6MTY2MTUxMDQ3MCwibmJmIjoxNjYxNTA2ODcwLCJqdGkiOiJzQ1lZMXpkYVdodzhkTWFJIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GmLN3_PZ34JU2WtPRs0rBV0TJxDdIeAbYNhpJb89hxo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surname\": \"Hormiga\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/profile/update/31",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"profile",
+						"update",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LogOut",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MTAxNjksImV4cCI6MTY2MTUxMzc2OSwibmJmIjoxNjYxNTEwMTY5LCJqdGkiOiI4WEVBV1FPZ01tTlRoSEY3Iiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.W03vf4Y8yv7JsjBUzPrso6Iada0IRCX4760S3KDyG_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/logout",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Game",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1ODE5MjAsImV4cCI6MTY2MTU4NTUyMCwibmJmIjoxNjYxNTgxOTIwLCJqdGkiOiJEMVI1bWRVeGp2UDZEN3pJIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.d8-UkwAHGJOblRsdNipwdkBlbs6oivbX18j4A8FsKBo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Xenoblade Chronicles\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/games",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Games",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDc4NTEsImV4cCI6MTY2MTUxMTQ1MSwibmJmIjoxNjYxNTA3ODUxLCJqdGkiOiJMYlJhWFRnSU9GSmU4MGhyIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.H_mure1et7gopRCk2B4ZJ54gxwrGfOiMEB3nxH1GlNE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/games",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Games By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDc4NTEsImV4cCI6MTY2MTUxMTQ1MSwibmJmIjoxNjYxNTA3ODUxLCJqdGkiOiJMYlJhWFRnSU9GSmU4MGhyIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.H_mure1et7gopRCk2B4ZJ54gxwrGfOiMEB3nxH1GlNE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/games/1",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"games",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Game",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDc4NTEsImV4cCI6MTY2MTUxMTQ1MSwibmJmIjoxNjYxNTA3ODUxLCJqdGkiOiJMYlJhWFRnSU9GSmU4MGhyIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.H_mure1et7gopRCk2B4ZJ54gxwrGfOiMEB3nxH1GlNE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hollow Knigth\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/games/1",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"games",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Game",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDc4NTEsImV4cCI6MTY2MTUxMTQ1MSwibmJmIjoxNjYxNTA3ODUxLCJqdGkiOiJMYlJhWFRnSU9GSmU4MGhyIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.H_mure1et7gopRCk2B4ZJ54gxwrGfOiMEB3nxH1GlNE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/games/21",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"games",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1ODE5MjAsImV4cCI6MTY2MTU4NTUyMCwibmJmIjoxNjYxNTgxOTIwLCJqdGkiOiJEMVI1bWRVeGp2UDZEN3pJIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.d8-UkwAHGJOblRsdNipwdkBlbs6oivbX18j4A8FsKBo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Xenoverse\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/channel/11",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"channel",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Join Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MTAxNjksImV4cCI6MTY2MTUxMzc2OSwibmJmIjoxNjYxNTEwMTY5LCJqdGkiOiI4WEVBV1FPZ01tTlRoSEY3Iiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.W03vf4Y8yv7JsjBUzPrso6Iada0IRCX4760S3KDyG_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/joinChannel/21",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"joinChannel",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MTAxNjksImV4cCI6MTY2MTUxMzc2OSwibmJmIjoxNjYxNTEwMTY5LCJqdGkiOiI4WEVBV1FPZ01tTlRoSEY3Iiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.W03vf4Y8yv7JsjBUzPrso6Iada0IRCX4760S3KDyG_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/leaveChannel/21",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"leaveChannel",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Channels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDc4NTEsImV4cCI6MTY2MTUxMTQ1MSwibmJmIjoxNjYxNTA3ODUxLCJqdGkiOiJMYlJhWFRnSU9GSmU4MGhyIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.H_mure1et7gopRCk2B4ZJ54gxwrGfOiMEB3nxH1GlNE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/channel",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"channel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Channel by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MDc4NTEsImV4cCI6MTY2MTUxMTQ1MSwibmJmIjoxNjYxNTA3ODUxLCJqdGkiOiJMYlJhWFRnSU9GSmU4MGhyIiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.H_mure1et7gopRCk2B4ZJ54gxwrGfOiMEB3nxH1GlNE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/channel/11",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"channel",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MTAxNjksImV4cCI6MTY2MTUxMzc2OSwibmJmIjoxNjYxNTEwMTY5LCJqdGkiOiI4WEVBV1FPZ01tTlRoSEY3Iiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.W03vf4Y8yv7JsjBUzPrso6Iada0IRCX4760S3KDyG_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Xenoblade\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/channel/11",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"channel",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Channels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE1MTAxNjksImV4cCI6MTY2MTUxMzc2OSwibmJmIjoxNjYxNTEwMTY5LCJqdGkiOiI4WEVBV1FPZ01tTlRoSEY3Iiwic3ViIjoiMzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.W03vf4Y8yv7JsjBUzPrso6Iada0IRCX4760S3KDyG_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/channel/11",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"channel",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send/Create Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE2MTk1MzgsImV4cCI6MTY2MTYyMzEzOCwibmJmIjoxNjYxNjE5NTM4LCJqdGkiOiJoR3NqTkd3UEtNN1hZeWx6Iiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.RHhFYX9ZNYAdNSFNQFRGSmiyMYRiPEl3agq0wGDoidg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"La historia no para de hacer giros inesperados\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/message/1",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"message",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE2MjM4NTUsImV4cCI6MTY2MTYyNzQ1NSwibmJmIjoxNjYxNjIzODU1LCJqdGkiOiIwYmV1V2E0QTJpTUdFWEZCIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.-G8C9YqsaTD92WCFoPYGykf-ETJifz8-U8pUxIkBWgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/message/1",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"message",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE2MTk1MzgsImV4cCI6MTY2MTYyMzEzOCwibmJmIjoxNjYxNjE5NTM4LCJqdGkiOiJoR3NqTkd3UEtNN1hZeWx6Iiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.RHhFYX9ZNYAdNSFNQFRGSmiyMYRiPEl3agq0wGDoidg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Mejor mundo abierto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/message/31",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"message",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N5bHZlcndpbmctY2hhdC1hcHAuaGVyb2t1YXBwLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2NjE2MTk1MzgsImV4cCI6MTY2MTYyMzEzOCwibmJmIjoxNjYxNjE5NTM4LCJqdGkiOiJoR3NqTkd3UEtNN1hZeWx6Iiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.RHhFYX9ZNYAdNSFNQFRGSmiyMYRiPEl3agq0wGDoidg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sylverwing-chat-app.herokuapp.com/api/message/41",
+					"protocol": "https",
+					"host": [
+						"sylverwing-chat-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"message",
+						"41"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
