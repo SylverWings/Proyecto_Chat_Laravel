@@ -129,7 +129,7 @@ class MessageController extends Controller
     }
 
 
-    public function deleteMessageById($id)
+    public function deleteMessage($id)
     {
         try {
             Log::info('Delete Message id: '. $id);
