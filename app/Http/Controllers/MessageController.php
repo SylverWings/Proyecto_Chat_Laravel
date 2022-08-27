@@ -46,7 +46,7 @@ class MessageController extends Controller
     }
 
 
-    public function getMessagesInChannelById ($id)
+    public function getMessagesInChannelById($id)
     {
         try {
             Log::info('Getting message id: '.$id);
