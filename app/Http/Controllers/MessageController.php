@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Channel;
 use App\Models\Message;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -15,13 +16,15 @@ class MessageController extends Controller
             Log::info('Creating Message');
 
             $message = $request->input('message');            
+            $channel_id = $id;
             $userId = auth()->user()->id;
-            $channel = $id;
+            $user = User::find($userId);
+            $user->channels()->attach($channel_id);
 
             $newMessage = new Message();
             $newMessage->message = $message;
             $newMessage->user_id = $userId;
-            $newMessage->channel_id = $channel;
+            $newMessage->channel_id = $id;
             $newMessage->save();
 
             return response()->json(
