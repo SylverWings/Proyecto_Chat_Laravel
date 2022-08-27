@@ -22,6 +22,7 @@ class MessageController extends Controller
             $newMessage->message = $message;
             $newMessage->user_id = $userId;
             $newMessage->channel_id = $channel;
+            $newMessage->date = 'today';
             $newMessage->save();
 
             return response()->json(
