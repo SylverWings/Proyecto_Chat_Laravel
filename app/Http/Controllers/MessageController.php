@@ -52,8 +52,8 @@ class MessageController extends Controller
             Log::info('Getting message id: '.$id);
 
             $messages = Channel::find($id)->message;            
-            $sorted = $messages->sortByDesc('created_at');
-            $sorted->values()->all();
+            // $sorted = $messages->sortByDesc('created_at');
+            // $sorted->values()->all();
 
             if(!$messages){
                 return response()->json(
@@ -69,7 +69,7 @@ class MessageController extends Controller
                 [
                     "success"=> true,
                     "message"=> 'Get all Messages',
-                    "data"=> $sorted
+                    "data"=> $messages
                 ],
                 200
             );
