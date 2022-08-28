@@ -51,7 +51,7 @@ class MessageController extends Controller
         try {
             Log::info('Getting message id: '.$channel_id);
 
-            $messages = Message::find($channel_id)->channel_id;            
+            $messages = Message::where('channel_id','=',$channel_id)->find();            
             // $sorted = $messages->sortByDesc('created_at');
             // $sorted->values()->all();
 
