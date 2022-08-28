@@ -46,15 +46,16 @@ class MessageController extends Controller
     }
 
 
-    public function getMessagesInChannelById($id)
+    public function getMessagesInChannelById($channel_id)
     {
         try {
-            Log::info('Getting message id: '.$id);
+            Log::info('Getting message id: '.$channel_id);
 
-            $messages = Channel::find($id)->message;            
+            $messages = Message::find($channel_id)->channel_id;            
             // $sorted = $messages->sortByDesc('created_at');
             // $sorted->values()->all();
 
+            Log::info($messages);
             if(!$messages){
                 return response()->json(
                     [
